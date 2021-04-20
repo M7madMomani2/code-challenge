@@ -7,6 +7,7 @@ Write a function that accepts an array of strings. Return the longest string.
 
 const longestString = (arr) => {
     // Solution code here...
+    return arr.sort(function (a, b) { return b.length - a.length })[0];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -25,17 +26,42 @@ isSimilar("cat","act")
 
 const isSimilar = (arr) => {
     // Solution code here...
+    let str1 = arr[0];
+    let str2 = arr[1];
+    let flag = false;
+    let flag2 = true;
+    str1.split('');
+    str2.split('');
+
+    str1.sort();
+    str2.sort();
+
+    str1.forEach(element => {
+        str2.forEach(element2 => {
+            if(element===element2){
+                flag = true;
+                break;
+            }
+            else{
+                flag = false;
+
+            }
+        })
+        
+    });
+
+    return flag;
 };
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
+ 
 All the code below will verify that your functions are working to solve the challenges.
-
+ 
 DO NOT CHANGE any of the below code.
-
+ 
 Run your tests from the console: jest challenges-01.test.js
-
+ 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
